@@ -17,4 +17,11 @@ class NotasFicais extends Model
     ];
 
     protected $table = "NotasFicais";
+
+    public function venda(){
+        return $this->hasOne(Vendas::class,
+        //'venda_id',
+        'id'
+    );
+    }
 }
