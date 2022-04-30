@@ -7,6 +7,7 @@ use Illuminate\Support\Arr;
 use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -15,7 +16,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = User::orderBy('id', 'DESC')->paginate(5);
 
@@ -102,7 +103,7 @@ class UserController extends Controller
         $this->validate($request, [ 'name'      => 'required',
                                     'email'     => 'required|email|unique:users,email',
                                     'password'  => 'required|same:confirm-password',
-                                    'role'      => 'required']);
+                                    'roles'      => 'required']);
 
         $input = $request->all();
 
