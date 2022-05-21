@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
                     &nbsp;
-                    <a href="/clientes/listar">List</a>
+                    <a href="/clientes">Clientes</a>
                     &nbsp;
                     <a href="/users">Usuários</a>
                     &nbsp;
